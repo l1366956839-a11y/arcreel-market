@@ -64,6 +64,23 @@ endpoints/
 
 实际投稿时不必手写：在 ArcReel 的「调用端点」里调好定义后点「导出」，把文件放进 `endpoints/<slug>/definition.json` 即可。
 
+## 技能库
+
+`skills/` 目录按类别整理了 AI 短剧创作技能（Claude / WorkBuddy 规范的 `SKILL.md`），来自公开项目的转载整理。
+
+```text
+skills/
+  README.md                  # 分类索引、安装方法与来源许可表
+  storyboard/                # 分镜与镜头设计
+  prompt/                    # 提示词与模型语法
+  review/                    # 剧本诊断
+  action/                    # 动作戏
+  writing/                   # 文风与去 AI 味
+  tooling/                   # 工具
+```
+
+**这些不是市场条目。** 市场页面只读取 `endpoints/` 下的调用端点定义，`skills/` 下的内容不会显示在市场里，也不参与索引生成——`arcreel-market.json` 由 CI 从 `endpoints/` 重建，`skills/` 不受影响。使用方法见 [skills/README.md](skills/README.md)。
+
 ## 投稿
 
 在 ArcReel 的「调用端点」界面点击「分享到官方市场」，即可从客户端一键提交，由官方服务代为开 PR；也可以自己向本仓库提 PR。两种方式的流程、内容准则、审核口径和下架方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
